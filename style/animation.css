@@ -1,0 +1,131 @@
+html{
+    cursor: none;
+}
+.spin{
+    animation: spiner 3s ease-in-out infinite;
+}
+
+@keyframes spiner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+.fadeInRight {
+    animation: fadeInRight 1.2s ease-in-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(20%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInLeft {
+    animation: fadeInLeft 1.2s ease-in-out;
+}
+
+.showUp{
+    animation: fadeInLeft 1.2s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;  
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-20%, 0, 0);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeOut{
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.hideOut {
+    animation-name: fadeOut;
+    animation-timeline: view();
+    animation-range: exit 40% cover 100%;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeUp2 {
+    animation-name: fadeInUp;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeUp {
+    animation-name: fadeInUp;
+    animation-timeline: view();
+    animation-range: entry 0% cover 100%;
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 0.4rem;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+    filter: blur(3px);
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.flip {
+    animation: flip 2s linear infinite;
+    transform-style: preserve-3d;
+    /* backface-visibility: hidden; */
+    perspective: 1000px;
+}
